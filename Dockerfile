@@ -18,7 +18,7 @@ EXPOSE 7077 7078 8080 8081
 
 WORKDIR /opt/spark
 
-VOLUME ["opt/spark/conf", "/opt/spark/work"]
+VOLUME ["/opt/spark/conf", "/opt/spark/work"]
 
 ENTRYPOINT ["/opt/spark/docker-scripts/entrypoint.sh"]
 CMD ["master"]
