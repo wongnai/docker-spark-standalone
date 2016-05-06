@@ -20,6 +20,11 @@ Start anohter worker with different ports by setting environment variables.
 
 	docker run --name spark-worker2 -d --net=host --restart=always -e SPARK_WORKER_PORT=7079 -e SPARK_WORKER_WEBUI_PORT=8082 skrityak/spark-standalone worker spark://${MASTER_HOST_OR_IP}:7077
 
+###Running an SparkPi example
+
+	docker exec -it spark-master /opt/spark/bin/run-example SparkPi 10
+
+You should be able to see lot of logs with "Pi is roughly 3.142448".
 
 ##Environment Variables
 

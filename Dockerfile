@@ -18,7 +18,7 @@ COPY scripts /opt/spark/docker-scripts
 
 RUN chmod -R +x /opt/spark/docker-scripts
 
-ENV PATH /opt/spark/bin:/opt/spark/sbin:$PATH \
+ENV PATH=/opt/spark/bin:/opt/spark/sbin:$PATH \
   SPARK_MASTER_PORT=7077 \
   SPARK_MASTER_WEBUI_PORT=8080 \
   SPARK_WORKER_PORT=7078 \
