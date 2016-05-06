@@ -5,7 +5,7 @@ if [[ "$1" = "master" ]]; then
   /opt/spark/docker-scripts/start-master-foreground.sh "$@"
 elif [[ "$1" == "worker" ]]; then
   shift;
-  /opt/spark/docker-scripts/start-slave-foreground.sh -p 7078 "$@"
+  /opt/spark/docker-scripts/start-slave-foreground.sh "$@"
 else 
   exec "$@"
 fi
