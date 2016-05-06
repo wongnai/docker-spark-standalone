@@ -26,6 +26,10 @@ Start anohter worker with different ports by setting environment variables.
 
 You should be able to see lot of logs with "Pi is roughly 3.142448".
 
+###Submit an SparkPi example from any node
+
+	docker exec -it spark-worker /opt/spark/bin/spark-submit --master spark://${MASTER_HOST_OR_IP}:7077 /opt/spark/examples/src/main/python/pi.py 10
+
 ##Environment Variables
 
 Spark reads environment variables in start script so we can adjust the variables to change ip/ports. Please see http://spark.apache.org/docs/latest/spark-standalone.html#cluster-launch-scripts for the available variables.
