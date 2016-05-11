@@ -3,7 +3,7 @@ FROM java:openjdk-8
 MAINTAINER Suparit Krityakien <suparit@wongnai.com>
 
 ARG __APACHE_MIRROR_SERVER=http://www-us.apache.org
-ARG __SPARK_VERSION=1.6.1
+ARG __SPARK_VERSION=1.6.0
 ARG __HADOOP_VERSION=2.6 
 
 RUN apt-get update \
