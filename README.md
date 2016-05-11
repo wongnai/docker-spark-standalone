@@ -4,7 +4,7 @@
 
 ###Master
 	
-	docker run --name spark-master -d --net=host --restart=always skrityak/spark-standalone master
+	docker run --name spark-master -d --net=host --restart=always skrityak/spark-standalone:1.6.0 master
 
 Try to check if the master is running by going to WEBUI (port 8080) on the running machine. We need the url of spark master to start the workers.
 
@@ -12,13 +12,13 @@ Try to check if the master is running by going to WEBUI (port 8080) on the runni
 	
 Get the url for the master (e.g. spark://192.168.1.50:7077) then start a worker with default port (7078 and 8081 for WebUI)  	
 
-	docker run --name spark-worker1 -d --net=host --restart=always skrityak/spark-standalone worker spark://${MASTER_HOST_OR_IP}:7077
+	docker run --name spark-worker1 -d --net=host --restart=always skrityak/spark-standalone:1.6.0 worker spark://${MASTER_HOST_OR_IP}:7077
 
 ###Worker2
 
 Start anohter worker with different ports by setting environment variables.
 
-	docker run --name spark-worker2 -d --net=host --restart=always -e SPARK_WORKER_PORT=7079 -e SPARK_WORKER_WEBUI_PORT=8082 skrityak/spark-standalone worker spark://${MASTER_HOST_OR_IP}:7077
+	docker run --name spark-worker2 -d --net=host --restart=always -e SPARK_WORKER_PORT=7079 -e SPARK_WORKER_WEBUI_PORT=8082 skrityak/spark-standalone:1.6.0 worker spark://${MASTER_HOST_OR_IP}:7077
 
 ###Running an SparkPi example
 
